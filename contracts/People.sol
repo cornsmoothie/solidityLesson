@@ -37,7 +37,8 @@ contract People {
         bytes32[] memory lastNames = new bytes32[](length);
         uint[] memory ages = new uint[](length);
 
-        for(uint i =0; i < people.length; i++){
+        //for(uint i =0; i < people.length; i++){
+        for(uint i =0; i < length; i++){ //this is less computationally expensive vs the line above
            Person memory currentPerson;
            currentPerson = people[i];
 
