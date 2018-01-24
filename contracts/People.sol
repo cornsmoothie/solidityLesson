@@ -29,7 +29,8 @@ contract People {
 
     //because strings can't be of varying length in an array on the blockchain, we have to use byte32 arrays
     //returns firstNames , lastNames , ages
-    function getPeople() constant returns (bytes32[], bytes32[] , uint[]){
+    //constant means the blockchain won't change aka no $$$
+    function getPeople() constant returns (bytes32[], bytes32[] , uint[]) {
 
         uint length = people.length;
 
@@ -37,8 +38,8 @@ contract People {
         bytes32[] memory lastNames = new bytes32[](length);
         uint[] memory ages = new uint[](length);
 
-        //for(uint i =0; i < people.length; i++){
-        for(uint i =0; i < length; i++){ //this is less computationally expensive vs the line above
+        for(uint i =0; i < people.length; i++) {
+
            Person memory currentPerson;
            currentPerson = people[i];
 
