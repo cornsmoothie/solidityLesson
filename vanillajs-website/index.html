@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
     <script src="scripts/my-index.js"></script>
 
     <title>dAPP1</title>
@@ -24,21 +25,26 @@
     <h2>
         Here are the People
     </h2>
-    <ul id="peopleList">
-        <li>"Test"</li>
-    </ul>
+    <button id="refreshButton">
+        Refresh
+    </button>
+    <table id="peopleTable">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+    </table>
     <h2>
         Add a person:
     </h2>
-    <form>
-        <label for="first">First Name</label>
-        <input type="text" name="first" id="firstNameInput">
-        <label for="last">Last Name</label>
-        <input type="text" name="last" id="lastNameInput">
-        <label for="age">Age</label>
-        <input type="text" name="age" id="ageInput">
-        <button>Submit</button>
-    </form>
+    <label for="first">First Name</label>
+    <input type="text" name="first" id="firstNameInput">
+    <label for="last">Last Name</label>
+    <input type="text" name="last" id="lastNameInput">
+    <label for="age">Age</label>
+    <input type="text" name="age" id="ageInput">
+    <button id="submitButton">Submit</button>
 </body>
 
 </html>

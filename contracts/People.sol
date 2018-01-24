@@ -48,6 +48,8 @@ contract People {
         //    ages.push(currentPerson.age);
             firstNames[i] = currentPerson.firstName;
             lastNames[i] = currentPerson.lastName;
+            // firstNames[i] = web3.toAscii(currentPerson.firstName);
+            // lastNames[i] = web3.toAscii(currentPerson.lastName);
             ages[i] = currentPerson.age;
         }
         return (firstNames , lastNames , ages);
