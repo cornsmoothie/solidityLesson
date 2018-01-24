@@ -19,6 +19,9 @@ var peopleContract = ethClient.eth.contract(contractABI).at(contractAddress);
 // var peopleContract = ethClient.eth.contract(contractABI , contractAddress);
 // var peopleContract = new .eth.Contract(contractABI);
 
+//This makes it so we don't have to define the account that we will be using for the transaction every time
+//It will just use the first account on the testrpc for everything
+ethClient.eth.defaultAccount = ethClient.eth.accounts[0]
 
 class App extends Component {
 
@@ -38,7 +41,9 @@ class App extends Component {
     //console.log(peopleContract);
     console.log(ethClient.eth.accounts); //this would grab metamask accounts
     var data = peopleContract.getPeople();
-    //var data = peopleContract.then(a => a.getPeople());
+    //Going to try to get a gas estimate
+    console.log(peopleContract.addPerson.estimateGas("Crayon" , "Crayons4566" , 455));
+
     this.setState({
       firstNames: String(data[0]).split(','),
       lastNames: String(data[1]).split(','),
